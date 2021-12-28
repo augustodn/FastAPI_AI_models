@@ -1,0 +1,6 @@
+*.h5
+*.json
+*.data
+*.csv
+*.pyc
+__pycache__/
