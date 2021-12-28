@@ -1,6 +1,5 @@
-from json import load
 import uvicorn
-from fastapi import Body, FastAPI
+from fastapi import FastAPI
 from keras.models import load_model
 import numpy as np
 
@@ -20,6 +19,7 @@ async def get_items(
     petal_l: float, petal_w: float):
     
     classes = ['Iris-setosa', 'Iris-versicolor', 'Iris-virginica']
+    
     predictions = model.predict(
         [[sepal_l, sepal_w, petal_l, petal_w]])
     position = int(np.argmax(predictions))
