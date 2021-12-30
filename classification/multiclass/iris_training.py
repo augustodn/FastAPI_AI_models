@@ -14,7 +14,6 @@ Y = dataset[:,4]
 # encode class values as integers
 encoder = LabelEncoder()
 encoder.fit(Y)
-print(encoder.classes_)
 encoded_Y = encoder.transform(Y)
 # convert integers to dummy variables (i.e. one hot encoded)
 dummy_y = np_utils.to_categorical(encoded_Y)
@@ -30,7 +29,7 @@ def baseline_model():
 	return model
 
 model = baseline_model()
-model.fit(X, dummy_y, epochs=200, batch_size=5, verbose=0)
+model.fit(X, dummy_y, epochs=200, batch_size=5, verbose=0, shuffle=True)
 scores = model.evaluate(X, dummy_y, verbose=0)
 print(f"{model.metrics_names[1]}: {scores[1]*100}")
 
