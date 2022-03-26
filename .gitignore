@@ -1,4 +1,5 @@
 *.h5
+!iris_model.h5
 *.json
 *.data
 *.csv
