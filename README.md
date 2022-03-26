@@ -1,9 +1,8 @@
 # Installation
-`pip install fastapi uvicorn`
+`$ pip install fastapi uvicorn`
 
-Besides that, in order to train the model is important to have tensorflow
-installed.
-
+The previous library requirements are needed for serving the model.
+In order to train it, is important to have tensorflow installed.
 # Download the dataset
 
 In this project we'll use the iris dataset. It's a simple toy dataset which
@@ -18,10 +17,11 @@ Alternatively, you can execute the following command in the same folder where
 `$ wget https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data`
 
 # Train the model
-`python iris_training.py`
+`$ python iris_training.py`
 
 # Running the Server
 Placed on the app.py folder execute
+
 `$ uvicorn app:app --reload`
 
 Open browser at: `http://127.0.0.1:8000`
@@ -38,11 +38,12 @@ Alternatively, execute the following command from the CLI:
 <br>
 
 Or use your favourite API platform such as [Postman](https://www.postman.com/)
-
 # Build a Docker container
 
-The Docker image will download the dataset, train the model, store it and serve
-it as a REST API.
+The Docker image will:
+1. Download the dataset.
+2. Train the model.
+3. Store it and serve it as a REST API.
 
 `$ docker-compose up --build`
 
