@@ -26,7 +26,8 @@ def baseline_model():
     model.add(Dense(8, input_dim=4, activation='relu'))
     model.add(Dense(3, activation='softmax'))
     # Compile model
-    model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+    model.compile(loss='categorical_crossentropy',
+        optimizer='adam', metrics=['accuracy'])
     return model
 
 model = baseline_model()

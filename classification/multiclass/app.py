@@ -17,9 +17,9 @@ async def index():
 async def get_items(
     sepal_l: float, sepal_w: float,
     petal_l: float, petal_w: float):
-    
+
     classes = ['Iris-setosa', 'Iris-versicolor', 'Iris-virginica']
-    
+
     predictions = model.predict(
         [[sepal_l, sepal_w, petal_l, petal_w]])
     position = int(np.argmax(predictions))
@@ -27,7 +27,7 @@ async def get_items(
     class_predicted = classes[position]
 
     return {'prediction': class_predicted,
-            'probability': probability, 
+            'probability': probability,
     }
 
 if __name__ == '__main__':

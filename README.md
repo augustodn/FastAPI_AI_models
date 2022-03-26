@@ -1,7 +1,7 @@
 # Installation
 `pip install fastapi uvicorn`
 
-Besides that, in order to train the model is important to have tensorflow 
+Besides that, in order to train the model is important to have tensorflow
 installed.
 
 # Train the model
@@ -24,3 +24,16 @@ Alternatively, execute the following command from the CLI:
   -H 'accept: application/json'``
 
 Or use your favourite API platform such as [Postman](https://www.postman.com/)
+
+# Build Docker container
+
+In order to generate a Docker container and launch the model, first build the 
+Docker Image.
+
+`$ docker-compose up --build`
+
+Then you can make requests to the API accesing from localhost as explained before
+in the `Test the model` section.
+
+* * *
+njoy and have fun!
